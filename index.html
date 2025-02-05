@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalist Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -20,9 +21,49 @@
             font-size: 3em;
             text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
         }
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 200px;
+            background-color: #444444; /* Slightly lighter than black */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li a i {
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
-    <h1>px-minimal</h1>
+    <nav>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h1>px-minimal</h1>
+    </div>
 </body>
 </html>
