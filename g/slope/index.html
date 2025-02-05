@@ -37,16 +37,21 @@ button {
     height: 100%;
 }
 
-
-  
-  
-  
+.top-left-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #2c2c2c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
 </style>
 
-
-
   <body>
-    
+    <a href="https://px-minimal.netlify.app" class="top-left-button">Go to px-minimal</a>
+
     <script src="UnityProgress.js"></script>
     <script src="unityloader41.js"></script>
 
@@ -56,20 +61,20 @@ button {
 
       window.onload = function () {
 
-        let  bttn = document.createElement( "button" );
-        bttn.appendChild(document.createTextNode( "CLICK TO PLAY NOW" ));
+        let bttn = document.createElement("button");
+        bttn.appendChild(document.createTextNode("CLICK TO PLAY NOW"));
         bttn.setAttribute('id', 'run_game');
         bttn.style.display = 'none';
         bttn.style.position = 'absolute';
         document.body.appendChild(bttn);
         
         bttn.style.display = 'block';
-        bttn.style.left = ((document.body.clientWidth - bttn.offsetWidth)/2) + 'px';
-        bttn.style.top = ((document.body.clientHeight - bttn.offsetHeight)/2) + 'px';
+        bttn.style.left = ((document.body.clientWidth - bttn.offsetWidth) / 2) + 'px';
+        bttn.style.top = ((document.body.clientHeight - bttn.offsetHeight) / 2) + 'px';
 
         bttn.onclick = function () {
 
-          gameInstance = UnityLoader.instantiate("gameContainer", "slope.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}});
+          gameInstance = UnityLoader.instantiate("gameContainer", "slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function () { UnityProgress(gameInstance, "complete") } } });
           this.remove();
         }
       }
